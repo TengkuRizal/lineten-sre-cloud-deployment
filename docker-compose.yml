@@ -1,0 +1,10 @@
+services:
+  lineten-app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      APP_VERSION: "local-dev"
+    restart: unless-stopped
