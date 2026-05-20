@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lineten-sre-assessment
+spec:
+  rules:
+    - host: lineten.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: lineten-sre-assessment
+                port:
+                  number: 80
