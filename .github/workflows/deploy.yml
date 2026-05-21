@@ -30,6 +30,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
+            --platform linux/amd64 \
             -f docker/Dockerfile \
             -t ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} \
             -t ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest \
